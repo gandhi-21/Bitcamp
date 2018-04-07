@@ -1,4 +1,4 @@
-""" Classify Content on Author's past"""
+""" Classify Content on Author's text"""
 
 import os
 import six
@@ -11,6 +11,7 @@ from google.cloud import storage
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/gaurav/Desktop/BItcamp/key.json"
 
 storage_client = storage.Client.from_service_account_json('key.json')
+
 
 def classify_text(text):
     client = language.LanguageServiceClient()
