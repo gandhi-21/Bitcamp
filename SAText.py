@@ -16,6 +16,7 @@ def print_result(annotations):
     score = annotations.document_sentiment.score
     magnitude = annotations.document_sentiment.magnitude
 
+    print("For the text written by the Author given for analysis:")
     print('Overall Sentiment: score of {} with magnitude of {}'.format(score, magnitude))
     if(score < 0.0):
         print("Too Negative!!")
