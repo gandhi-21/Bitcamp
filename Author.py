@@ -16,4 +16,4 @@ text_file2 = open("Author History.txt","w")
 text_file2.write(wikipedia.summary(Author))
 text_file2.close
 
-print(wikipedia.summary(Author))
+print("History extracted")

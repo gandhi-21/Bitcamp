@@ -1,3 +1,4 @@
+""" Sentimental Analysis on the text"""
 
 import os
 
@@ -16,6 +17,15 @@ def print_result(annotations):
     magnitude = annotations.document_sentiment.magnitude
 
     print('Overall Sentiment: score of {} with magnitude of {}'.format(score, magnitude))
+    if(score < 0.0):
+        print("Too Negative!!")
+        print(" May be Biased")
+    elif(score >= 0.5):
+        print("Too Positive!!")
+        print("May be biased")
+    else:
+        print("Neither too positive(>0.5) nor too negative(<0.0)")
+        print("Looks Unbiased")
     return 0
 
 
@@ -29,12 +39,10 @@ def analyze(linestring):
 
     print_result(annotations)
 
-
-if __name__ == '__main__':
-    linestring = open('text.txt', 'r', encoding="ISO-8859-1").read()
-    document = types.Document(
-        content=linestring,
-        type=enums.Document.Type.PLAIN_TEXT)
+linestring = open('text.txt', 'r', encoding="ISO-8859-1").read()
+document = types.Document(
+    content=linestring,
+    type=enums.Document.Type.PLAIN_TEXT)
 
 analyze(linestring)
 

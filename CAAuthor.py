@@ -1,3 +1,5 @@
+""" Sentiment Analysis of Author's past"""
+
 # Imports the Google Cloud client library
 from google.cloud import language
 from google.cloud.language import enums
@@ -26,4 +28,12 @@ document = types.Document(
 sentiment = client.analyze_sentiment(document=document).document_sentiment
 
 print('Sentiment: {}, {}'.format(sentiment.score, sentiment.magnitude))
-
+if sentiment.score < 0.0:
+    print("Too Negative!!")
+    print(" May be Biased")
+elif sentiment.score >= 0.5:
+    print("Too Positive!!")
+    print("May be biased")
+else:
+    print("Neither too positive(>0.5) nor too negative(<0.0)")
+    print("Looks Unbiased")
