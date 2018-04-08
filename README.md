@@ -7,6 +7,6 @@ All due credits to:
 Google APIs
 
 
-Use Project.py to execute the whole program. 
-Put your api key as a .json file in the project folder. 
-Put the text you want to analyze in text.txt file and the author name when asked should match the name from their wikipedia page. 
+Use Project.py to execute the whole program.    
+Put your api key as a .json file in the project folder.    
+Put the text you want to analyze in text.txt file and the author name when asked should match the name from their wikipedia page.    
